@@ -18,3 +18,10 @@ This team is working together to build a platform for clubs so that students can
 	* Tech 1
 	* Tech 2
 	* Tech 3
+
+## **Features of 1st Sprint**
+	* Feature 1 - user story
+	* Feature 2 - user story
+	* Feature 3 - user story
+	* Feature 4 - user story
+	* Feature 5 - user story
