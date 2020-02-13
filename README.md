@@ -15,6 +15,6 @@ This team is working together to build a platform for clubs so that students can
 
 
 ## **Technologies**
-	*Tech 1
-	*Tech 2
-	*Tech 3
+	* Tech 1
+	* Tech 2
+	* Tech 3
