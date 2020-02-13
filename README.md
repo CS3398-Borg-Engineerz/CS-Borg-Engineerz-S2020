@@ -8,5 +8,4 @@ This team is working together to build a platform for clubs so that students can
 
 ## **General Info**
 
-![GitHub Logo](images/Borg.jpg)
-Format: ![alt text](https://github.com/CS3398-Borg-Engineerz/CS-Borg-Engineerz-S2020/blob/master/Borg.jpg)
+![alt text](https://github.com/CS3398-Borg-Engineerz/CS-Borg-Engineerz-S2020/blob/master/Borg.jpg)
