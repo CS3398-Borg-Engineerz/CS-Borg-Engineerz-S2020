@@ -14,10 +14,10 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 
 ### **Web Application Core Functionalities**
 * Search bar that looks up an organization from our DB based on the name typed into the search field
-* Organization home page with all relevant information, ie meeting times, upcoming events, organization leader's contact information, social media links,  
-*
-*
-*
+* Organization home page with all relevant information, ie meeting times, upcoming events, organization leader's contact information, social media links.  
+* Organizations will be tagged with attributes based on what their organization does. CS clubs have CS tags, Math club have math tags, freshman friendly tags, etc 
+* Organizations will be able to edit their information and tags.
+
 
 ### **Web Application Additonal Features**
 * Check list of interests that the student can check that correlate to different organizations 
@@ -28,7 +28,11 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 *
 
 ### **Technologies**	
-* Tech 1
+*  Webscraping scrape the data from urls. 
+    analyze info and assign attributes to it for filtering and search bar.
+    Texas state clubs - https://www.campusrecreation.txstate.edu/sport-clubs.html
+    Texas state sports clubs - https://www.campusrecreation.txstate.edu/sport-clubs.html
+
 * Tech 2
 * Tech 3
 
