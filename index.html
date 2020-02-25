@@ -1,22 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Club Advising</title>
-        <meta charset="windows-1252">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+        <title>Txstate Clubs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <style>
+        /* Style the body */
+        body {
+          font-family: Arial;
+          margin: 0;
+        }
 
-            
+        /* Header/Logo Title */
+        .header {
+          padding-top: 40px;
+          background: #6A5638;
+          color: white;
+        }
+        .header2 {
+          padding-top: 40px;
+          background: #501214;
+          color: white;
+          padding-bottom: 10px;
+        }
+
+        /* Page Content */
+        .content {
+            padding:20px;
+        }
+
+        .searchBar{
+            margin-left:28%;
+            width:40%;
+            font-size:16px;
+            vertical-align: middle;
+
+        }
+
+        .searchButton{
+            vertical-align: middle;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            width:80px;
+            height:26px;
+            cursor: pointer;
+        }
 
         </style>
     </head>
-
-
     <body>
-        This is a test
 
-        
+    <div class="header"></div>
+
+    <div class="header2">
+        <form action="/action_page.php">
+            <input class="searchBar" type="text" id="search" name="search">
+            <input class="searchButton" type="submit" value="Search">
+        </form>
+
+    </div>
+      
+    
+
+    <div class="content">
+      <h1>Content</h1>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+
     </body>
 </html>
