@@ -32,7 +32,7 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 
 ## **1st Sprint Task Summary**	
 As a team we are researching our DB, UI, UX design and are implementing the design of our web applicaiton layout.
-* **DB** words
+* **DB** Analyzed possible DB resources and organized the DB using an online tool. Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations. 
 * **UI** words
 * **UX** words
 
