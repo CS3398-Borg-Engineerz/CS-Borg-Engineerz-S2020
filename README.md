@@ -34,7 +34,7 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 As a team we are researching our DB, UI, UX design and are implementing the design of our web applicaiton layout.
 
 **DB** 
-* (Bailey Cheung, studentOrgDB.2.27.sql and studentOrgDBvisual.2.27.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations. 
+* (Bailey Cheung, studentOrgDB.2.27.sql and DBvisual.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations. 
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UI** 
