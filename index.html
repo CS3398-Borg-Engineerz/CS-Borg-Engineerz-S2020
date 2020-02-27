@@ -14,7 +14,7 @@
           color: white;
         }
         .header2 {
-          padding-top: 38px;
+          padding-top: 67px;
           background: #501214;
           color: white;
           padding-bottom: 16px;
@@ -28,13 +28,13 @@
 
         /* Page Content */
         .content {
-            padding:20px;
+            padding-top:15%;
         }
 
         .searchBar{
             margin-left:28%;
             width:40%;
-            font-size:16px;
+            font-size:20px;
             vertical-align: middle;
 
         }
@@ -69,26 +69,72 @@
 
     <div class="header"></div>
 
-    <div class="header2">
-        <form action="/action_page.php">
-            <input class="searchBar" type="text" id="search" name="search">
-            <input class="searchButton" type="submit" value="Search">
-        </form>
-
-    </div>
+    <div class="header2"></div>
 
     <div class="sidebar">
         <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
         <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
         <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
+        <button onclick="window.open('https://www.google.com', '_blank');">List</button><br><hr>
+        <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
         <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
         <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
     </div>
 
     <div class="content">
-      <h1>Content</h1>
+        <form method="post">
+            <input class="searchBar" type="text" name="search">
+            <input class="searchButton" type="submit" name="submit">
+        </form>
       
     </div>
 
     </body>
 </html>
+
+<?php
+
+$con = new PDO("mysql:host=localhost;dbname=clubs", 'root', 'armstrong2018');
+
+if (isset($_POST["submit"])){
+    $str = $_POST["search"];
+    $sth = $con->prepare("SELECT * FROM `search`  WHERE ClubName = '$str'");
+
+    $sth -> setFetchMode(PDO:: FETCH_OBJ);
+    $sth -> execute();
+
+    if($row = $sth -> fetch())
+    {
+        ?>
+        <br><br><br>
+        <table>
+            <tr>
+                <th>Club Name</th>
+                <th>Next Meet</th>
+            </tr>
+            <tr>
+                <td><?php echo $row -> ClubName; ?></td>
+                <td><?php echo $row -> NextMeet; ?></td>
+            </tr>
+        </table>
+
+<?php
+
+    }
+    
+    else{
+        echo "Club does not exist";
+    }
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
