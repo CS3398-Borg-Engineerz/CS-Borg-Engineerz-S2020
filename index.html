@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Txstate Clubs</title>
+        <title>Clubs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -63,67 +63,80 @@
             margin:20px;            
         }
 
+        .srchRes{
+            margin-left:10%;
+        }
+
         </style>
     </head>
     <body>
 
-    <div class="header"></div>
+        <div class="header"></div> 
+        <div class="header2"></div>
 
-    <div class="header2"></div>
+        <div class="sidebar">
+            <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">List</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
+        </div>
 
-    <div class="sidebar">
-        <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">List</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
-        <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
-    </div>
-
-    <div class="content">
-        <form method="post">
-            <input class="searchBar" type="text" name="search">
-            <input class="searchButton" type="submit" name="submit">
-        </form>
-      
-    </div>
-
+        <div class="content">
+            <form method="post">
+                <input class="searchBar" type="text" name="search">
+                <input class="searchButton" type="submit" name="submit">
+            </form>
+        </div>
     </body>
 </html>
 
 <?php
 
-$con = new PDO("mysql:host=localhost;dbname=clubs", 'root', 'armstrong2018');
+$con = new PDO("mysql:host=localhost;dbname=clubs", 'root', 'armstrong2018');// connect to database
 
-if (isset($_POST["submit"])){
+if (isset($_POST["submit"])){// if submit button pushed
+    // set the searched input to variable str
     $str = $_POST["search"];
-    $sth = $con->prepare("SELECT * FROM `search`  WHERE ClubName = '$str'");
+    // find in the database table "search" where the variable in the table "ClubName" matches our str variable
+    $sth = $con->prepare("SELECT * FROM `search`  WHERE ClubName = '$str'"); 
 
+    // grab the row object from the table 
     $sth -> setFetchMode(PDO:: FETCH_OBJ);
     $sth -> execute();
 
+    // try to set the row object to the variable row, if there is a row that matched the str variable then if
+    // statement succeeds if sth -> fetch() fails then there was no match with table variable and str variable
     if($row = $sth -> fetch())
     {
         ?>
         <br><br><br>
-        <table>
+        <table class="srchRes">
             <tr>
                 <th>Club Name</th>
                 <th>Next Meet</th>
             </tr>
             <tr>
-                <td><?php echo $row -> ClubName; ?></td>
-                <td><?php echo $row -> NextMeet; ?></td>
+                <td><?php echo $row -> ClubName;?></td>
+                <td><?php echo $row -> NextMeet;?></td>
             </tr>
         </table>
+
+
 
 <?php
 
     }
     
     else{
-        echo "Club does not exist";
+        ?>
+        <br><br><br>
+        <label class="srchRes">
+            Club does not exists.
+        </label>
+        <?php
     }
 }
 ?>
