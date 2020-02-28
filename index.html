@@ -95,13 +95,13 @@
 
 <?php
 
-$con = new PDO("mysql:host=localhost;dbname=clubs", 'root', 'armstrong2018');// connect to database
+$con = new PDO("mysql:host=localhost;dbname=studentOrgsDB", 'root', 'armstrong2018');// connect to database
 
 if (isset($_POST["submit"])){// if submit button pushed
     // set the searched input to variable str
     $str = $_POST["search"];
     // find in the database table "search" where the variable in the table "ClubName" matches our str variable
-    $sth = $con->prepare("SELECT * FROM `search`  WHERE ClubName = '$str'"); 
+    $sth = $con->prepare("SELECT * FROM `Organization`  WHERE name = '$str'"); 
 
     // grab the row object from the table 
     $sth -> setFetchMode(PDO:: FETCH_OBJ);
@@ -115,12 +115,12 @@ if (isset($_POST["submit"])){// if submit button pushed
         <br><br><br>
         <table class="srchRes">
             <tr>
-                <th>Club Name</th>
-                <th>Next Meet</th>
+                <th>Club Name</th>&#9
+                <th>Category</th>
             </tr>
             <tr>
-                <td><?php echo $row -> ClubName;?></td>
-                <td><?php echo $row -> NextMeet;?></td>
+                <td><?php echo $row -> name;?></td>
+                <td><?php echo $row -> category;?></td>
             </tr>
         </table>
 
@@ -140,14 +140,3 @@ if (isset($_POST["submit"])){// if submit button pushed
     }
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
