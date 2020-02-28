@@ -47,10 +47,10 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * (name, artifacts as specified in assignment 8) description of work  
 
 ## **Team Members Next Steps**
-Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
-Ola - 
-Bailey - 
-Chance - 
+* Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
+* Ola - 
+* Bailey - 
+* Chance - 
 
 ## **2nd Sprint Task Summary**	
 As a team we are implementing our DB, UI, UX design into code. 
