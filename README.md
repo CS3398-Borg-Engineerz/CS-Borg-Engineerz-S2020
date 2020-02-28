@@ -29,6 +29,7 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 ### **Technologies**	
 *  mySQL Workbench - used to generate server and DB connection 
 *  draw.io - DB planning and graphical representation 
+*  PHP - used to communicate with the mySQL database from front end
 
 ## **1st Sprint Task Summary**	
 As a team we are researching our DB, UI, UX design and are implementing the design of our web applicaiton layout.
@@ -38,12 +39,18 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UI** 
-* (name, artifacts as specified in assignment 8) description of work  
+* (Josh Armstrong, Basic drawing of homepages.png and index.html) Made drawings to map out what our user inteface is going to look like. Planned a common header/theme that will apply to all pages. index.html is our front page design that includes our search bar, it uses php to communicate with the database and search it based on what the user enters.
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UX** words
 * (name, artifacts as specified in assignment 8) description of work  
 * (name, artifacts as specified in assignment 8) description of work  
+
+## **Team Members Next Steps**
+Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
+Ola - 
+Bailey - 
+Chance - 
 
 ## **2nd Sprint Task Summary**	
 As a team we are implementing our DB, UI, UX design into code. 
