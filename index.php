@@ -87,7 +87,9 @@
             <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">List</button><br><hr>
+            <form method="post">
+                <button  type="submit" name="list">List </button><hr>
+            </form>
             <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
@@ -103,6 +105,32 @@
 </html>
 
 <?php
+
+$con = mysqli_connect("localhost", "root", "armstrong2018", "studentOrgsDB" );// connect to database
+
+if (isset($_POST["list"])){// if submit button pushed
+
+    $result = mysqli_query($con, "SELECT * FROM `Organization`");
+    ?>
+        <table class="srchRes" style="margin-top:50px">
+            <tr>
+                <th>Club Name</th>
+                <th>Category</th>
+            </tr>
+        </table>
+    <?php
+
+    while($row = mysqli_fetch_array($result)){
+        ?>
+        <table class="srchRes">
+            <tr>
+                <td><?php echo $row['name'];?></td>
+                <td><?php echo $row['category'];?></td>
+            </tr>
+        </table>
+        <?php
+    }
+}   
 
 $con = new PDO("mysql:host=localhost;dbname=studentOrgsDB", 'root', 'armstrong2018');// connect to database
 
@@ -140,8 +168,6 @@ if (isset($_POST["submit"])){// if submit button pushed
                 </td>
             </tr>
         </table>
-
-
 
 <?php
 
