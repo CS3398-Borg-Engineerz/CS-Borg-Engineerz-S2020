@@ -64,7 +64,11 @@
         }
 
         .srchRes{
-            margin-left:10%;
+            margin-left:5%;
+        }
+        th, td {
+            text-align:center;
+            width:200px;
         }
 
         </style>
@@ -84,59 +88,55 @@
             <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
         </div>
 
-        <div class="content">
-            <form method="post">
-                <input class="searchBar" type="text" name="search">
-                <input class="searchButton" type="submit" name="submit">
-            </form>
-        </div>
+        
     </body>
 </html>
 
 <?php
 
 $con = new PDO("mysql:host=localhost;dbname=studentOrgsDB", 'root', 'armstrong2018');// connect to database
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-if (isset($_POST["submit"])){// if submit button pushed
-    // set the searched input to variable str
-    $str = $_POST["search"];
-    // find in the database table "search" where the variable in the table "ClubName" matches our str variable
-    $sth = $con->prepare("SELECT * FROM `Organization`  WHERE name = '$str'"); 
+$url = basename($url); //get the name of the club from the url
 
-    // grab the row object from the table 
-    $sth -> setFetchMode(PDO:: FETCH_OBJ);
-    $sth -> execute();
+$sth = $con->prepare("SELECT * FROM `Organization`  WHERE id = '$url'"); //pull from DB where url variable matches the Org name
+$sth -> setFetchMode(PDO:: FETCH_OBJ);
+$sth -> execute();
+$row = $sth -> fetch();
 
-    // try to set the row object to the variable row, if there is a row that matched the str variable then if
-    // statement succeeds if sth -> fetch() fails then there was no match with table variable and str variable
-    if($row = $sth -> fetch())
-    {
-        ?>
-        <br><br><br>
-        <table class="srchRes">
-            <tr>
-                <th>Club Name</th>&#9
-                <th>Category</th>
-            </tr>
-            <tr>
-                <td><?php echo $row -> name;?></td>
-                <td><?php echo $row -> category;?></td>
-            </tr>
-        </table>
+$sth1 = $con->prepare("SELECT * FROM `Events`  WHERE org_id = '$url'"); //pull from DB where url variable matches the Org name
+$sth1 -> setFetchMode(PDO:: FETCH_OBJ);
+$sth1 -> execute();
+$row1 = $sth1 -> fetch();
 
-
-
-<?php
-
-    }
     
-    else{
-        ?>
-        <br><br><br>
-        <label class="srchRes">
-            Club does not exists.
-        </label>
-        <?php
-    }
-}
 ?>
+<br><br><br>
+<table class="srchRes">
+    <tr>
+        <th>Club Name</th>
+        <th>Category</th>
+        <th>Event Location</th>
+        <th>Event Time</th>
+        <th>Event Day</th>
+    </tr>
+    <tr>
+        <td><?php echo $row -> name;?></td>
+        <td><?php echo $row1 -> category?></td>
+        <td><?php echo $row1 -> event_location;?></td>
+        <td><?php echo $row1 -> event_time;?></td>
+        <td><?php echo $row1 -> event_day;?></td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
