@@ -67,6 +67,15 @@
             margin-left:10%;
         }
 
+        .clubBtn{
+            font-size:18px;
+            margin-left:20px;
+        }
+        th, td{
+            width:200px;
+            text-align:center;
+        }
+
         </style>
     </head>
     <body>
@@ -100,6 +109,8 @@ $con = new PDO("mysql:host=localhost;dbname=studentOrgsDB", 'root', 'armstrong20
 if (isset($_POST["submit"])){// if submit button pushed
     // set the searched input to variable str
     $str = $_POST["search"];
+    $_POST['search'] = $str;
+
     // find in the database table "search" where the variable in the table "ClubName" matches our str variable
     $sth = $con->prepare("SELECT * FROM `Organization`  WHERE name = '$str'"); 
 
@@ -111,16 +122,22 @@ if (isset($_POST["submit"])){// if submit button pushed
     // statement succeeds if sth -> fetch() fails then there was no match with table variable and str variable
     if($row = $sth -> fetch())
     {
+        
         ?>
         <br><br><br>
         <table class="srchRes">
             <tr>
-                <th>Club Name</th>&#9
+                <th>Club Name</th>
                 <th>Category</th>
             </tr>
             <tr>
                 <td><?php echo $row -> name;?></td>
                 <td><?php echo $row -> category;?></td>
+                <td>
+                <form action="<? echo $row->id?>" method="post">
+                    <button class ="clubBtn" type="submit">Go to Club</button>
+                </form>
+                </td>
             </tr>
         </table>
 
