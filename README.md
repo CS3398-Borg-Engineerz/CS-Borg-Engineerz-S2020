@@ -40,7 +40,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UI** 
-* (Josh Armstrong, Basic drawing of homepages.png and index.html) Made drawings to map out what our user inteface is going to look like. Planned a common header/theme that will apply to all pages. index.html is our front page design that includes our search bar, it uses php to communicate with the database and search it based on what the user enters.
+* (Josh Armstrong, Basic drawing of homepages.png and index.html/index.php, 5.php, 2.php) Made drawings to map out what our user inteface is going to look like. Planned a common header/theme that will apply to all pages. index.html and index.php is our front page design that includes our search bar, it uses php to communicate with the database and search it based on what the user enters. 5.php, and 2.php are two demo pages for the clubs. 
 * (Ola Nzeogu, sidebar.html and table.html) Created a sidebar feature for the homepage with all the links going to google and created an information table for some random organizations with the necessary information.
 
 **UX** words
