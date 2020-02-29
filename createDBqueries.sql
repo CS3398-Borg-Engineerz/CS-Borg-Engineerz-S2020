@@ -1,3 +1,5 @@
+drop database studentorgsdb; 
+
 CREATE DATABASE studentOrgsDB;
 
 CREATE TABLE Organization (
@@ -21,7 +23,7 @@ CREATE TABLE Meetings (
 );
 
 CREATE TABLE Events (
-  event_id int NOT NULL, 
+  event_id int NOT NULL AUTO_INCREMENT, 
   event_name varchar(100),
   event_location varchar(100),
   event_time time,
@@ -33,7 +35,7 @@ CREATE TABLE Events (
 
 CREATE TABLE Org_Member (
   org_id int,
-  member_id int, 
+  member_id int NOT NULL AUTO_INCREMENT, 
   member_name varchar(100),
   graduation_year int,
   member_status boolean,
