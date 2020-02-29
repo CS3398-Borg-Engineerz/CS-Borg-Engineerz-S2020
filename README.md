@@ -44,7 +44,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UX** words
-* (name, artifacts as specified in assignment 8) description of work  
+* (Chance Martin, Usecases.md) List of use cases that are implemented or to be implemented. To be used as guidelines to add features. 
 * (name, artifacts as specified in assignment 8) description of work  
 
 ## **Team Members Next Steps**
