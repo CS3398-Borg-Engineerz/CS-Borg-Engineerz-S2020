@@ -1,3 +1,5 @@
+drop database studentorgsdb; 
+
 CREATE DATABASE studentOrgsDB;
 
 CREATE TABLE Organization (
@@ -6,12 +8,6 @@ CREATE TABLE Organization (
   category ENUM ('FITNESS', 'ART', 'ACADEMIC', 'HEALTH', 'MUSIC'),
   PRIMARY KEY(org_id)
 );
-
-INSERT INTO Organization (org_name, category)
-VALUES
-	('Dancing Bobcats', 'FITNESS'),
-    ('Coding Bobcats', 'ACADEMIC'),
-    ('Pre-med Bobcats', 'HEALTH');
 
 CREATE TABLE Meetings (
   meeting_org_id int NOT NULL AUTO_INCREMENT,
@@ -26,14 +22,8 @@ CREATE TABLE Meetings (
         ON UPDATE RESTRICT ON DELETE CASCADE
 );
 
-INSERT INTO Meetings (meeting_location, meeting_time, meeting_day, next_event_id, dues)
-VALUES
-	('DERR 231', '10:00:00', 'MONDAY', 1, true),
-	('DERR 231', '10:00:00', 'TUESDAY', 2, true), 
-	('DERR 231', '10:00:00', 'WEDNESDAY', 3, true);
-
 CREATE TABLE Events (
-  event_id int NOT NULL, 
+  event_id int NOT NULL AUTO_INCREMENT, 
   event_name varchar(100),
   event_location varchar(100),
   event_time time,
@@ -43,15 +33,9 @@ CREATE TABLE Events (
         ON UPDATE RESTRICT ON DELETE CASCADE
 );
 
-INSERT INTO Events (event_id, event_name, event_location, event_time, event_date)
-VALUES
-	(1, 'Ice Cream Social', 'DERR 231', '10:00:00', '2020-02-29'),
-	(2, 'Car Wash Fundraiser', 'IGRM 422', '10:00:00', '2020-04-29'),
-	(3, 'Coffee House Study Session', 'LBJ 100', '10:00:00', '2020-03-29');
-	
 CREATE TABLE Org_Member (
   org_id int,
-  member_id int, 
+  member_id int NOT NULL AUTO_INCREMENT, 
   member_name varchar(100),
   graduation_year int,
   member_status boolean,

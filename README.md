@@ -36,21 +36,22 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 
 **DB** 
 * (Bailey Cheung, studentOrgDB.2.27.sql and DBvisual.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (studentORGDB.2.27.sql). 
+* (Chance Martin, OrgValues.sql) Assisted in DB creation by creating list of scripts to add to tables. Featuring dummy info for multiple clubs, including meeting times, event info, and member info. 
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UI** 
 * (Josh Armstrong, Basic drawing of homepages.png and index.html) Made drawings to map out what our user inteface is going to look like. Planned a common header/theme that will apply to all pages. index.html is our front page design that includes our search bar, it uses php to communicate with the database and search it based on what the user enters.
-* (name, artifacts as specified in assignment 8) description of work  
+* (Ola Nzeogu, sidebar.html and table.html) Created a sidebar feature for the homepage with all the links going to google and created an information table for some random organizations with the necessary information.
 
 **UX** words
-* (name, artifacts as specified in assignment 8) description of work  
+* (Chance Martin, Usecases.md) List of use cases that are implemented or to be implemented. To be used as guidelines to add features. 
 * (name, artifacts as specified in assignment 8) description of work  
 
 ## **Team Members Next Steps**
 * Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
-* Ola - 
-* Bailey - 
-* Chance - 
+* Ola - Assist in the creation of the pages on the sidebar and use the database to upload more information about the organizations to the table and pages.
+* Bailey - Connect the Database to a cloud server in Azure to allow remote access. 
+* Chance - Built more robust DB and front end connection. Add club tagging DB. Build system for officer editing club info. 
 
 ## **2nd Sprint Task Summary**	
 As a team we are implementing our DB, UI, UX design into code. 
