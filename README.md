@@ -56,6 +56,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 ## **2nd Sprint Task Summary**	
 As a team we are implementing our DB, UI, UX design into code. 
 * Chance - Build Template for Org page. 
+* Ola - Build Calendar page for sidebar link.
 
 ## **3rd Sprint Task Summary**	
 Testing with use cases and debugging. 
