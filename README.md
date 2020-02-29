@@ -36,6 +36,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 
 **DB** 
 * (Bailey Cheung, studentOrgDB.2.27.sql and DBvisual.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (studentORGDB.2.27.sql). 
+* (Chance Martin, OrgValues.sql) Assisted in DB creation by creating list of scripts to add to tables. Featuring dummy info for multiple clubs, including meeting times, event info, and member info. 
 * (name, artifacts as specified in assignment 8) description of work  
 
 **UI** 
@@ -50,7 +51,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
 * Ola - 
 * Bailey - Connect the Database to a cloud server in Azure to allow remote access. 
-* Chance - 
+* Chance - Built more robust DB and front end connection. Add club tagging DB. Build system for officer editing club info. 
 
 ## **2nd Sprint Task Summary**	
 As a team we are implementing our DB, UI, UX design into code. 
