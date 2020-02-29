@@ -27,15 +27,16 @@ Our Web Applicaiton will allow students to filter through organizations of inter
 *
 
 ### **Technologies**	
-*  mySQL Workbench - used to generate server and DB connection 
+*  mySQL Workbench - used to create local DB
 *  draw.io - DB planning and graphical representation 
+*  azure - remote server
 *  PHP - used to communicate with the mySQL database from front end
 
 ## **1st Sprint Task Summary**	
 As a team we are researching our DB, UI, UX design and are implementing the design of our web applicaiton layout.
 
 **DB** 
-* (Bailey Cheung, studentOrgDB.2.27.sql and DBvisual.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (studentORGDB.2.27.sql). 
+* (Bailey Cheung, createDBqueries.sql and DBvisual.png) Analyzed possible DB resources and servers before decideing on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (DBvisual.png, draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (createDBqueries.sql).  Create a remote server on azure for local DB to connect to. 
 * (Chance Martin, OrgValues.sql) Assisted in DB creation by creating list of scripts to add to tables. Featuring dummy info for multiple clubs, including meeting times, event info, and member info. 
 * (name, artifacts as specified in assignment 8) description of work  
 
@@ -43,7 +44,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * (Josh Armstrong, Basic drawing of homepages.png and index.html/index.php, 5.php, 2.php) Made drawings to map out what our user inteface is going to look like. Planned a common header/theme that will apply to all pages. index.html and index.php is our front page design that includes our search bar, it uses php to communicate with the database and search it based on what the user enters. 5.php, and 2.php are two demo pages for the clubs. 
 * (Ola Nzeogu, sidebar.html and table.html) Created a sidebar feature for the homepage with all the links going to google and created an information table for some random organizations with the necessary information.
 
-**UX** words
+**UX** 
 * (Chance Martin, Usecases.md) List of use cases that are implemented or to be implemented. To be used as guidelines to add features. 
 * (name, artifacts as specified in assignment 8) description of work  
 
@@ -54,9 +55,13 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * Chance - Built more robust DB and front end connection. Add club tagging DB. Build system for officer editing club info. 
 
 ## **2nd Sprint Task Summary**	
-As a team we are implementing our DB, UI, UX design into code. 
-* Chance - Build Template for Org page. 
-* Ola - Build Calendar page for sidebar link.
+**DB** 
+* (Bailey Cheung) - get connection with php files 
+
+**UI** 
+* (Bailey Cheung, template.html) - create html template for all php files 
+
+**UX** 
 
 ## **3rd Sprint Task Summary**	
 Testing with use cases and debugging. 
