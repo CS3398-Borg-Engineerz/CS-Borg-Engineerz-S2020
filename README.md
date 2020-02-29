@@ -51,7 +51,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 ## **Team Members Next Steps**
 * Josh - Create the pages that our side bar links to. Pull data from the database to automate as much as we can instead of trying to make a page for every single club.
 * Ola - Assist in the creation of the pages on the sidebar and use the database to upload more information about the organizations to the table and pages.
-* Bailey - Connect the Database to a cloud server in Azure to allow remote access. 
+* Bailey - Connect the Database to a cloud server in Azure to allow remote access - PHP edits. Create HTML/CSS template for webpages.
 * Chance - Built more robust DB and front end connection. Add club tagging DB. Build system for officer editing club info. 
 
 ## **2nd Sprint Task Summary**	
