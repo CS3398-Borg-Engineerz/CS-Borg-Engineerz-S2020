@@ -1,5 +1,3 @@
-drop database studentorgsdb; 
-
 CREATE DATABASE studentOrgsDB;
 
 CREATE TABLE Organization (
@@ -52,5 +50,13 @@ CREATE TABLE Officer (
   position ENUM ('PRESIDENT', 'VICE PRESIDENT', 'SECRETARY', 'SOCIAL MEDIA MANAGER', 'TREASURER', 'OTHER'),
   email varchar(150),
     FOREIGN KEY (member_id)
+        REFERENCES Org_Member (member_id)
+);
+
+CREATE TABLE Login (
+  member_id int(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  netid varchar(255) NOT NULL,
+  password varchar(255) NOT NULL
+        FOREIGN KEY (member_id)
         REFERENCES Org_Member (member_id)
 );
