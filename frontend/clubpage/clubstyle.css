@@ -1,0 +1,68 @@
+
+       
+/* Header/Logo Title */
+.header {
+  padding-top: 40px;
+  background: #6A5638;
+  color: white;
+}
+.header2 {
+  padding-top: 67px;
+  background: #501214;
+  color: white;
+  padding-bottom: 16px;
+}
+
+body{
+    font-size:25px;
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Page Content */
+.club-name{
+    align-self: start;
+    float: left;
+    font-size: 50px;
+    margin: 0px;
+}
+
+.bio{
+    
+}
+
+.officers{
+
+}
+.meetings{
+
+}
+.dues{
+
+}
+.contact{
+
+}
+.club-logo{
+    width: 250px;
+    height: 175px;
+    background-image: url(txstlogo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    transform: translate(-40px, 25px);
+    outline: 25px solid #1C6EA4;
+    outline-offset: 0px;    
+}
+.sidebar{
+    float:right;
+    padding-right:75px;
+    padding-top:50px;
+}
+.sidebar button{
+    font-size:22px;
+    border:none;
+    margin:20px;            
+}
+
