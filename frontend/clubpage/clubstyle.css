@@ -13,35 +13,49 @@
   padding-bottom: 16px;
 }
 
-body{
-    font-size:25px;
+.body{
     font-family: Arial;
-    margin: 0;
+    position: relative;
 }
-
+.left-container{
+    float: left;
+    width: 42%;
+}
+.right-container{
+    float: left;
+    width: 43%;
+    padding-left: 6px;
+    
+}
 /* Page Content */
 .club-name{
-    align-self: start;
-    float: left;
     font-size: 50px;
-    margin: 0px;
 }
 
 .bio{
-    
+    margin-bottom: 14px;
+    margin-top: -24px;
+    outline: 2px solid #1C6EA4;
+    outline-offset: 2px;
 }
 
 .officers{
-
+    outline: 2px solid #1C6EA4;
+    outline-offset: 2px;
 }
 .meetings{
-
+    margin-top: 65px;
+    margin-bottom: 0px;
+    outline: 2px solid #1C6EA4;
+    outline-offset: 2px;
 }
 .dues{
-
+    outline: 2px solid #1C6EA4;
+    outline-offset: 2px;
 }
 .contact{
-
+    outline: 2px solid #1C6EA4;
+    outline-offset: 2px;
 }
 .club-logo{
     width: 250px;
@@ -50,8 +64,7 @@ body{
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    float: right;
-    transform: translate(-40px, 25px);
+    transform: translate(100%, 25px);
     outline: 25px solid #1C6EA4;
     outline-offset: 0px;    
 }
