@@ -57,6 +57,16 @@
     outline: 2px solid #1C6EA4;
     outline-offset: 2px;
 }
+
+.srchRes, th, td{
+    border: 2px solid #1C6EA4;
+    border-collapse: collapse;
+    width: 75%;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+
 .club-logo{
     width: 250px;
     height: 175px;
@@ -78,4 +88,6 @@
     border:none;
     margin:20px;            
 }
+
+
 
