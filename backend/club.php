@@ -1,23 +1,7 @@
 <?php
-	session_start();
-
-	if(isset($_POST['search'])){//if search button pushed
-		include ("configSoftEng.php");//connect to db
-		$search = $_POST['searchWdPHP'];// $conn->real_escape_string($_POST['searchWdPHP']);//set $search var equal to input
-		$data = $conn->query("SELECT id FROM Organization WHERE name LIKE '$search'");//query database to check if the search input exists
-		if($data->num_rows > 0){ // if there is a match in the search bar
-			$_SESSION['name'] = $search;
-			$searchRes = mysqli_fetch_assoc($data);//fetch the data from the query
-			$_SESSION['id'] = (int) $searchRes['id'];//get the id of the logged in user and assign it to a session variable. Convert back to an int
-			exit ('Search success');
-		} else {
-			$search = null;
-			exit('Not found');
-		}
-
-		exit($search . " = " . "" );
-	}
+	session_start();//needed for the variables passing from index.php
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +9,7 @@
         <title>Clubs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script
-            src="http://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous">
-        </script>
+        
         <style>
        
         /* Header/Logo Title */
@@ -89,82 +69,57 @@
         }
 
         .srchRes{
-            margin-left:10%;
+            margin-left:5%;
         }
-
-        .clubBtn{
-            font-size:18px;
-            margin-left:20px;
-        }
-        th, td{
-            width:200px;
+        th, td {
             text-align:center;
+            width:200px;
         }
 
         </style>
     </head>
     <body>
 
-
         <div class="header"></div> 
         <div class="header2"></div>
-
-
-    	
 
         <div class="sidebar">
             <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
-            <button  id="list" name="list">List</button><hr>
+            <button onclick="window.open('https://www.google.com', '_blank');">List</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
             <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
         </div>
-
-        <div class="content">
-			<input class="searchBar" type="text" id="input" placeholder="Search...">
-			<input class="searchButton" type="button" value="Submit" id="search">
-        	<p style="padding-left: 15%;" id="response"></p>
-        </div>
-        
     </body>
 </html>
 
+<?php
+	include ("configSoftEng.php");//connect to db
+	$clubID = $_SESSION['id']; // ID of the club stored in session variable
 
+	$data = $conn->query("SELECT * FROM `Events`  WHERE org_id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
 
-<script type="text/javascript">
-$(document).ready(function() {
-	//execute this code after the document has loaded
-	$("#search").on('click', function(){//search button pushed
-		
-		var searchWd = $("#input").val();//set searchWd equal to user input
+	if($data->num_rows > 0){//make sure there was data found in DB
+		$EventData = mysqli_fetch_assoc($data);//Make the data from the query usable
+	}
+?>
 
-		if(searchWd == ""){//user entered nothing
-			alert("Please check your inputs.");	
-		} else { //send if search bar has info
-			$.ajax({
-				url: 'index.php',
-				method: 'POST',
-				data:{
-					search: 1,
-					searchWdPHP: searchWd,
-				},
-				success: function(response){
-					$("#response").html(response);
-					if(response.indexOf('success') >= 0){
-						window.location = 'club.php';
-					}
-
-					if(response.indexOf('Not') >= 0){
-						
-					}
-				},
-			});
-		}
-	});
-});
-</script>
-
-
-
+<br><br><br>
+<table class="srchRes">
+    <tr>
+        <th>Club Name</th>
+        <th>Category</th>
+        <th>Event Location</th>
+        <th>Event Time</th>
+        <th>Event Day</th>
+    </tr>
+    <tr>
+        <td><?php echo $_SESSION['name'];//name still stored in session so use it from there?></td>
+        <td><?php echo $EventData['category'];//info from table in DB?></td>
+        <td><?php echo $EventData['event_location'];?></td>
+        <td><?php echo $EventData['event_time'];?></td>
+        <td><?php echo $EventData['event_day'];?></td>
+    </tr>
+</table>
