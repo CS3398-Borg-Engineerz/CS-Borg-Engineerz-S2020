@@ -3,7 +3,8 @@ CREATE DATABASE studentOrgsDB;
 CREATE TABLE Organization (
   org_id int NOT NULL AUTO_INCREMENT,
   org_name varchar(100) NOT NULL,
-  category ENUM ('FITNESS', 'ART', 'ACADEMIC', 'HEALTH', 'MUSIC'),
+  category ENUM ('Math', 'English', 'Computer Science', 'Student Recreation', 'Orchestra', 'Pre-Med', 'Pre-Law'),
+  tag ENUM('FITNESS', 'ART', 'ACADEMIC', 'HEALTH', 'MUSIC', 'GRADUATE'),
   PRIMARY KEY(org_id)
 );
 
