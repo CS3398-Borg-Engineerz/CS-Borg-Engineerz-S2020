@@ -1,83 +1,31 @@
-
-       
-/* Header/Logo Title */
-.header {
-  padding-top: 40px;
-  background: #6A5638;
-  color: white;
-}
-.header2 {
-  padding-top: 67px;
-  background: #501214;
-  color: white;
-  padding-bottom: 16px;
+:root{
+    --DGold: #6A5638;
+    --DRed: #501214;
+    --Blue: #1C6EA4;
+    --White: #FFFFFF;
+    --Black: #000000;
+    --LGrey: #F0F0F0;
+    --Grey: #DeDeDe;
 }
 
-.body{
+html{
     font-family: Arial;
-    position: relative;
-}
-.left-container{
-    float: left;
-    width: 42%;
-}
-.right-container{
-    float: left;
-    width: 43%;
-    padding-left: 6px;
-    
-}
-/* Page Content */
-.club-name{
-    font-size: 50px;
-}
-
-.bio{
-    margin-bottom: 14px;
-    margin-top: -24px;
-    outline: 2px solid #1C6EA4;
-    outline-offset: 2px;
-}
-
-.officers{
-    outline: 2px solid #1C6EA4;
-    outline-offset: 2px;
-}
-.meetings{
-    margin-top: 65px;
-    margin-bottom: 0px;
-    outline: 2px solid #1C6EA4;
-    outline-offset: 2px;
-}
-.dues{
-    outline: 2px solid #1C6EA4;
-    outline-offset: 2px;
-}
-.contact{
-    outline: 2px solid #1C6EA4;
-    outline-offset: 2px;
-}
-
-.srchRes, th, td{
-    border: 2px solid #1C6EA4;
-    border-collapse: collapse;
-    width: 75%;
-    height: 50px;
-    border-bottom: 1px solid #ddd;
 }
 
 
-.club-logo{
-    width: 250px;
-    height: 175px;
-    background-image: url(txstlogo.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translate(100%, 25px);
-    outline: 25px solid #1C6EA4;
-    outline-offset: 0px;    
+.header {
+    padding-top: 40px;
+    background: #6A5638;
+    color: white;
 }
+
+.header2 {
+    padding-top: 67px;
+    background: #501214;
+    color: white;
+    padding-bottom: 16px;
+}
+
 .sidebar{
     float:right;
     padding-right:75px;
@@ -90,4 +38,51 @@
 }
 
 
+.body{
+    width: 950px;
+    background-color: var(--White)
+}
 
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}   
+
+.info-container{
+    width: 50%; 
+    height: 70%; 
+    background-color: var(--LGrey)
+} 
+
+.announcement-container{
+    width: 50%; 
+    height: 70%; 
+    background-color: var(--Grey)
+}
+
+.club-name{
+    font-size: 35px;
+    text-align: center;
+}
+
+.club-info{
+    text-align: center;
+    margin: 10px auto 10px auto;
+    display: block;
+}
+
+.club-announcement{
+    width: 90%;
+    text-align: left;
+    margin: 10px auto 10px auto;
+    display: block;
+    background-color: var(--LGrey)
+}
+
+img{
+    width: 35%;
+    height: auto;
+}

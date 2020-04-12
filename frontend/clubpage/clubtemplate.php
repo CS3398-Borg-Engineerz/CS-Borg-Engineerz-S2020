@@ -1,27 +1,21 @@
 <?php
     session_start();//needed for the variables passing from index.php
     
-	include ("configSoftEng.php");//connect to db
-	$clubID = $_SESSION['id']; // ID of the club stored in session variable
-
-	$data = $conn->query("SELECT * FROM `Events`  WHERE org_id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
-
-	if($data->num_rows > 0){//make sure there was data found in DB
-		$EventData = mysqli_fetch_assoc($data);//Make the data from the query usable
-    }
+    include ("configSoftEng.php");//connect to db
     
-    $data = $conn->query("SELECT * FROM `leadership`  WHERE org_id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
+    $clubID = $_SESSION['id']; // ID of the club stored in session variable
+    
+    $clubName=$_SESSION['name'];
 
-    if($data->num_rows > 0){
-        $LeadershipData = mysqli_fetch_assoc($data);
-    }
-
-    $data = $conn->query("SELECT * FROM `meetings`  WHERE org_id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
+    
+    //pulls meeting info from DB
+    $data = $conn->query("SELECT * FROM `meetings`  WHERE org_id = '$clubID'"); 
 
     if($data->num_rows > 0){
         $MeetingData = mysqli_fetch_assoc($data);
     }
 
+    //pulls dues from club table
     $data = $conn->query("SELECT dues FROM `Organization`  WHERE id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
 
     if($data->num_rows > 0){
@@ -53,50 +47,84 @@
             <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
         </div>
 
+        <div class="flex-container">    <!-- Flow container -->
+            <div class="info-container"> 
+            <!-- Club Info + Meetings -->
+                <!-- Place Holder for Club Logos -->
+                <img src="https://i.imgur.com/v9xqoMC.png" class="club-info">
 
-        <div class="left-container">
-            <div class="club-name"><p><?php echo $_SESSION['name'];?></p></div>
+                <!-- Posts Club name to page -->
+                <div class="club-name"><b><p><?php echo $_SESSION['name'];?></p></b></div>
 
-            <div class="bio"><p>This is the club bio: <br />
+                <!-- Place holder for Bio -->
+                <div class="club-info"><p><b>This is the club bio:</b><br />
                 We are a club that does club things. <br />
                 Look at us do club stuff. <br />
                 We have all kinds of club stuff. <br />
                 From club pizza, to club soda. Oh boy, I sure do love being in a club.<br />
-            </p></div>
+                </p></div>
 
+                <!-- Pulls officer info from table sequentially -->
+                <div class="club-info"><p><b>Officers: </b><br />
+                    <?php
+                        $data = $conn->query("SELECT * FROM `member`  WHERE org_name = '$clubName'");  
+                        if($data->num_rows > 0){
+                            while($row = mysqli_fetch_assoc($data)){
+                                foreach($row as $ind => $val)
+                                {
+                                    if($ind != 'org_name' && $ind != 'graduation_year' && $ind != 'status'){
+                                        echo "$val";
+                                        if($ind != 'officer'){
+                                            echo ", ";
+                                        }
+                                    }
+                                }
+                                echo '<br />';
+                            }
+                        }
+                    ?>
+                </p></div>
 
-            <div class="officers"><p>Officers:</p></div>
+                <!-- Posts Meeting Info to page -->
+                <div class="club-info"><p><b>Meeetings:</b><br /><?php echo $MeetingData['meeting_day'];?> <?php echo $MeetingData['meeting_time'];?> 
+                    <?php echo $MeetingData['meeting_location'];?></p></div>
+
+                <!-- Posts dues from table to page -->
+                <div class="club-info"><p><b>Dues:</b> $ <?php echo $DuesData['dues'];?></p></div>
+                
+                <!-- Place Holder for contact page -->
+                <div class="club-info"><p><b>Contact info:</b> Club@club.com</p></div>
+            </div>
+            
+            <div class="announcement-container">
+            <!-- Club Announcements and Jazz -->
+            
+                <div class="club-announcement">
+                <!--Loops through the events table and outputs to page -->
+                <p>
+                <?php
+
+                    $data = $conn->query("SELECT * FROM `Events`  WHERE org_id = '$clubID'"); 
+                    echo "<b>Events</b><hr />";
+                    if($data->num_rows > 0){
+                        while($row = mysqli_fetch_assoc($data)){
+                            foreach($row as $ind => $val)
+                            {
+                                if($ind != 'org_id'){
+                                    echo "$val";
+                                    if($ind != 'event_day'){
+                                        echo ", ";
+                                    }
+                                }
+                            }
+                            echo "<hr />";
+                        }
+                    }
+                ?>
+                </p>
+                </div>
+            </div>
         </div>
 
-        <div class="right-container">
-            <div class="club-logo"></div>
-
-
-            <div class="meetings"><p>Meeetings:<?php echo $MeetingData['meeting_day'];?> <?php echo $MeetingData['meeting_time'];?> 
-                <?php echo $MeetingData['meeting_location'];?></p></div>
-
-            <div class="dues"><p>Dues: $ <?php echo $DuesData['dues'];?></p></div>
-
-            <div class="contact"><p>Contact info: Club@club.com</p></div>
-
-
-            <table class="srchRes">
-            <tr>
-            <th>Category</th>
-            <th>Event Location</th>
-            <th>Event Time</th>
-            <th>Event Day</th>
-            </tr>
-            <tr>
-            <td><?php echo $EventData['category'];//info from table in DB?></td>
-            <td><?php echo $EventData['event_location'];?></td>
-            <td><?php echo $EventData['event_time'];?></td>
-            <td><?php echo $EventData['event_day'];?></td>
-            </tr>
-            </table>
-
-        </div>
-        
-        
     </body>
 </html>
