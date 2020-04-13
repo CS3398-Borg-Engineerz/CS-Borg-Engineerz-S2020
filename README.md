@@ -21,22 +21,23 @@ Our Web Application will allow students to filter through organizations of inter
 
 
 ### **Web Application Additional Features (to be added)**
-* Check list of interests that the student can check that correlate to different organizations
-* Suggestions of similar clubs based on the organization that you search
+* Check list of interests that the student can check that correlate to different organizations.
+* Suggestions of similar clubs based on the organization that you search.
 * Organizations will be able to edit their information and tags.
-*
+* Each organization will have tags that can be used to suggest other organizations for the student to join.
 
 ### **Technologies**
-*  mySQL Workbench - used to create local DB
+*  MySQL Workbench - used to create local DB
 *  draw.io - DB planning and graphical representation
 *  azure - remote server
-*  PHP - used to communicate with the mySQL database from front end
+*  PHP - used to communicate with the MySQL database from front end
+*  LAMP stack - used to develop web application from backend to frontend
 
 ## **1st Sprint Task Summary**
 As a team we are researching our DB, UI, UX design and are implementing the design of our web application layout.
 
 **DB**
-* (Bailey Cheung, createDBqueries.sql and DBvisual.png) Analyzed possible DB resources and servers before deciding on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (DBvisual.png, draw.io). Created a DB in mySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (createDBqueries.sql).  Create a remote server on azure for local DB to connect to.
+* (Bailey Cheung, createDBqueries.sql and DBvisual.png) Analyzed possible DB resources and servers before deciding on MySQL Workbench. Created and organized the desired DB features/attributes using an online tool that included primary keys, relationships and visual table aids (DBvisual.png, draw.io). Created a DB in MySQL workbench and inserted dummy values to mimic on campus organizations using scripts created from my diagram and research (createDBqueries.sql).  Create a remote server on azure for local DB to connect to.
 * (Chance Martin, OrgValues.sql) Assisted in DB creation by creating list of scripts to add to tables. Featuring dummy info for multiple clubs, including meeting times, event info, and member info.
 * (name, artifacts as specified in assignment 8) description of work  
 
@@ -56,8 +57,13 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 
 ## **2nd Sprint Task Summary**
 **Login Functionalities with Corresponding User Profile Page**
-* (Bailey Cheung) - PR 36: Created a login page (HTML/CSS and PHP files) and added a login table to the database (SQL files). PR 38: Created a user profile page (HTML/CSS and PHP files) that pull an organization member's information from the database and formats into a profile page - beautification needed. Officer (will be) able to edit organization page preferences.
+* (Bailey Cheung) - PR 36 (see for artifacts): Created a login page (HTML/CSS and PHP files) and added a login table to the database (SQL files). PR 38 (see for artifacts): Created a user profile page (HTML/CSS and PHP files) that pull an organization member's information from the database and formats into a profile page - beautification needed. Officer (will be) able to edit organization page preferences. PR 41 (see for artifacts): Created algorithm base code for organization suggestions for students based on current organizations that they are a part of (Java file, MySQL files).
 
+## **Team Members Next Steps**
+* Josh -
+* Ola -
+* Bailey - Flesh out the organization tag algorithm and beatify my PHP login code and logic - refactor as much as possible. Add any additional functionality to login page that team determines is necessary, beautification may also be needed. 
+* Chance -
 
 ## **3rd Sprint Task Summary**
 Testing with use cases and debugging.
