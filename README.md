@@ -59,13 +59,13 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 **Login Functionalities with Corresponding User Profile Page**
 * (Bailey Cheung) - PR 36 (see for artifacts): Created a login page (HTML/CSS and PHP files) and added a login table to the database (SQL files). PR 38 (see for artifacts): Created a user profile page (HTML/CSS and PHP files) that pull an organization member's information from the database and formats into a profile page - beautification needed. Officer (will be) able to edit organization page preferences. PR 41 (see for artifacts): Created algorithm base code for organization suggestions for students based on current organizations that they are a part of (Java file, MySQL files).
 **Club Information Page**
-* (Chance Martin, clubtemplate.php clubstyle.css): Created club page (PHP and CSS file) that pulls information from the database and presents it - will need refactoring when new info is added to DB. 
+* Chance Martin - club_page_design.pdf:  An example of finished club page product. clubtemplate.php, clubstyle.css: Created club page (PHP and CSS file) that pulls information from the database and presents it for specific club after it is selected in the search- will need refactoring when new info is added to DB. 
 
 ## **Team Members Next Steps**
 * Josh -
 * Ola -
 * Bailey - Flesh out the organization tag algorithm and beatify my PHP login code and logic - refactor as much as possible. Add any additional functionality to login page that team determines is necessary, beautification may also be needed. 
-* Chance - Add images and biography info to DB, reformat club page code, incorporate better presentation of future events to club page, possibly add calendar. 
+* Chance - Add images and biography info to DB, reformat club page code, incorporate better presentation of future events to club page, possibly add calendar to club page. 
 
 ## **3rd Sprint Task Summary**
 Testing with use cases and debugging.
