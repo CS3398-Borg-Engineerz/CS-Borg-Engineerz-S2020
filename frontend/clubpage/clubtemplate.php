@@ -16,10 +16,16 @@
     }
 
     //pulls dues from club table
-    $data = $conn->query("SELECT dues FROM `Organization`  WHERE id = '$clubID'"); //pull from DB where the club's id matches the Org id in Events tables
+    $data = $conn->query("SELECT dues FROM `Organization`  WHERE id = '$clubID'"); 
 
     if($data->num_rows > 0){
         $DuesData = mysqli_fetch_assoc($data);
+    }
+
+    $data = $conn->query("SELECT logo FROM `Organization`  WHERE id = '$clubID'");
+
+    if($data->num_rows > 0){
+        $logoData = mysqli_fetch_assoc($data);
     }
 
 ?>
@@ -51,7 +57,7 @@
             <div class="info-container"> 
             <!-- Club Info + Meetings -->
                 <!-- Place Holder for Club Logos -->
-                <img src="https://i.imgur.com/v9xqoMC.png" class="club-info">
+                <img src=<?php $logoData ?> class="club-info">
 
                 <!-- Posts Club name to page -->
                 <div class="club-name"><b><p><?php echo $_SESSION['name'];?></p></b></div>
