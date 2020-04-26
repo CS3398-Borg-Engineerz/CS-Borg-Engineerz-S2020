@@ -22,10 +22,16 @@
         $DuesData = mysqli_fetch_assoc($data);
     }
 
-    $data = $conn->query("SELECT logo FROM `Organization`  WHERE id = '$clubID'");
+    $data = $conn->query("SELECT DISTINCT logo FROM `Organization`  WHERE id = '$clubID'");
 
     if($data->num_rows > 0){
         $logoData = mysqli_fetch_assoc($data);
+    }
+
+    $data = $conn->query("SELECT DISTINCT bio FROM `Organization`  WHERE id = '$clubID'");
+
+    if($data->num_rows > 0){
+        $bioData = mysqli_fetch_assoc($data);
     }
 
 ?>
@@ -57,18 +63,13 @@
             <div class="info-container"> 
             <!-- Club Info + Meetings -->
                 <!-- Place Holder for Club Logos -->
-                <img src=<?php $logoData ?> class="club-info">
+                <img src="<?php echo $logoData['logo'] ?>" class ="club-info">
 
                 <!-- Posts Club name to page -->
                 <div class="club-name"><b><p><?php echo $_SESSION['name'];?></p></b></div>
 
                 <!-- Place holder for Bio -->
-                <div class="club-info"><p><b>This is the club bio:</b><br />
-                We are a club that does club things. <br />
-                Look at us do club stuff. <br />
-                We have all kinds of club stuff. <br />
-                From club pizza, to club soda. Oh boy, I sure do love being in a club.<br />
-                </p></div>
+                <div class="club-info"><pre style="font-size: 16px; font-family:'Times New Roman', Times, serif" ><?php echo $bioData['bio'] ?></pre></div>
 
                 <!-- Pulls officer info from table sequentially -->
                 <div class="club-info"><p><b>Officers: </b><br />
@@ -78,13 +79,18 @@
                             while($row = mysqli_fetch_assoc($data)){
                                 foreach($row as $ind => $val)
                                 {
-                                    if($ind != 'org_name' && $ind != 'graduation_year' && $ind != 'status'){
+                                    if($ind != 'org_name' && $ind != 'graduation_year' && $ind != 'status' && $ind != 'officer_pic'){
                                         echo "$val";
                                         if($ind != 'officer'){
                                             echo ", ";
                                         }
+                                        if($ind == 'officer'){
+                                            echo "  ";
+                                        }
                                     }
+                                    
                                 }
+                                ?><img src="<?php echo $row['officer_pic'] ?>" class ="officer-pic"><?php
                                 echo '<br />';
                             }
                         }
