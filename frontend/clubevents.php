@@ -21,10 +21,11 @@
 
     <body>
     	<div class="events" style="padding-right:250px;margin-left:50px; margin-top:50px">
-    	<h1>Events</h1><br>
+    	<h1>Events</h1><hr><br>
     	<?php
     		$clubID = 2;
-   		    $data = $conn->query("SELECT * FROM `Events`  WHERE org_id = '$clubID'"); 
+    		$clubName = 
+   		    $data = $conn->query("SELECT * FROM `Events`"); 
 		    if($data->num_rows > 0){
 		        while($row = mysqli_fetch_assoc($data)){
 		            foreach($row as $ind => $val)
@@ -32,10 +33,11 @@
 		                if($ind != 'org_id'){
 		                    echo "$val";
 		                    if($ind != 'event_day'){
-		                        echo ", ";
-		                    }
+		                        echo ", ";		                    }
 		                }
 		            }
+                    echo "<br><br>";
+
 		        }
 		    }
     	?>
