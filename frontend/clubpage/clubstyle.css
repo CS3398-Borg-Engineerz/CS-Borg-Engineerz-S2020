@@ -8,9 +8,6 @@
     --Grey: #DeDeDe;
 }
 
-html{
-    font-family: Arial;
-}
 
 
 .header {
@@ -37,13 +34,14 @@ html{
     margin:20px;            
 }
 
-
+/* sets body size */
 .body{
     width: 950px;
-    background-color: var(--White)
+    background-color: var(--White);
+
 }
 
-
+/*container and that can change to page size*/
 .flex-container{
     display: flex;
     flex-wrap: wrap;
@@ -51,21 +49,30 @@ html{
    
 }   
 
+/*container for info that posts on left of page*/
 .info-container{
     width: 50%; 
-    height: 70%; 
+    height: 100%; 
     background-color: var(--LGrey)
 } 
 
+/*container for infor that posts on right of page, events, etc*/
 .announcement-container{
     width: 50%; 
-    height: 70%; 
+    height: 100%; 
     background-color: var(--Grey)
 }
 
 .club-name{
     font-size: 35px;
     text-align: center;
+}
+
+
+.officer-pic{
+    width: 10%;
+    height: auto;
+    vertical-align: middle;
 }
 
 .club-info{

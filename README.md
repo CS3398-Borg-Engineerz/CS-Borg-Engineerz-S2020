@@ -65,9 +65,12 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 **Search Bar**
 * (Josh Armstrong) - search.php, configSoftEng.php, index.php: finished the search.php page and made it set a cookie using sessino_start() so i could share a variable with Chance's club.php page. Doing so allowed us to create on page that can be populated with data instead of making a new page for every single club. configSoftEng.php seperates the database login from the rest of the code and uses variables to use msqli. So it's a better way to connect opposed to myslq which i set up before and can be easily edited when changing login/DB info. With index.php i seperated the header and sidebar and put them in a header.php file so they can be imported into a page instead of being on every single page.
 
+**Calendar Page**
+* (Ola Nzeogu) - Created a calendar page that pulls events from the database and populates the calendar page for students to find activities they may be interested in easier. All the supproting sode can be found in the Event Calendar folder; they are separated by file type ie CSS folder JS folder etc.
+
 ## **Team Members Next Steps**
 * Josh - Make the other tabs link to pages with more info - Events, Gallery. Split my files up so there is no duplicated code and instead can import the header/footer so it's easier to maintain. Clean up code where needed and explain what it does so when i/someone else looks back on it in the future there is no guessing
-* Ola -
+* Ola - Assist with the creation of other pages and fix any existing bugs with the calendar page.
 * Bailey - Flesh out the organization tag algorithm and beatify my PHP login code and logic - refactor as much as possible. Add any additional functionality to login page that team determines is necessary, beautification may also be needed. 
 * Chance - Add images and biography info to DB, reformat club page code, incorporate better presentation of future events to club page, possibly add calendar to club page. 
 

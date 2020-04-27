@@ -6,18 +6,25 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     </head>
-    <body>
-        <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
+    <body style="background-color:#501214;"></bodystyle>
+        <i><?php echo $login_session; ?></i>
         <b id="logout"><a href="logout.php">Log Out</a></b>
-        <div class="profile">
-            <img src="txstlogo.jpg" alt="profile image" class="profile__image">
-            <div class="profile__name">member_name</div>
-            <div class="profile__org">org_name</div>
-            <div class="profile__detail"> 
-                Email Address: <br>
-                Paid Dues? 	<br>
-                Member Status:	<br>
-                Graduation Year: <br>
+        <div class="row">
+            <div class="profile">
+                <img src="bobcat.jpg" alt="profile image" class="profile__image">
+                <div class="profile__name">member_name</div>
+                <div class="profile__detail"> 
+                    Email Address: <br>
+                    Graduation Year: <br>
+                </div>
+            </div>
+            <div class="organization">
+                <img src="bobcat.jpg" alt="profile image" class="profile__image">
+                <div class="profile__org">org_name</div>
+                <div class="profile__detail"> 
+                    Paid Dues? 	<br>
+                    Member Status:	<br>
+                </div>
             </div>
         </div>
     </body>
