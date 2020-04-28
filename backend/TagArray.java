@@ -17,4 +17,10 @@ public class TagArray {
         }
         tagOrgs.enqueue(club); 
     }
+    public void deleteOrgs(String club){
+        tagsOrgs.dequeue(club);
+    }
+    public void viewOrgs(){
+        tagOrgs.viewOrgs(); 
+    }
 }
