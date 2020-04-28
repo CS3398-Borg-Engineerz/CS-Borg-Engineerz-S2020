@@ -16,7 +16,7 @@ $gradYear = $conn->query($sql);
 $sql = "SELECT member_status FROM Org_Member";
 $memberStatus = $conn->query($sql); //boolean value
 if(!$memberstatus)
-    $status = "You are not a member of this organization.";
+    $status = "You are not a member of any organization.";
 else 
     $status = "You are a member of " + $orgName; 
 
@@ -41,7 +41,7 @@ $officerStatus = $conn->query($sql); //boolean value
 
 if($officerStatus){
     $sql = "SELECT officer_position FROM Officer where member_id = $memberId";
-    $stats = $conn->query($sql);
+    $officerPosition = $conn->query($sql);
     $sql = "SELECT officer_email FROM Officer where member_id = $memberId";
     $officerEmail = $conn->query($sql);
 }
@@ -55,25 +55,18 @@ if($officerStatus){
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     </head>
-    <body style="background-color:#501214;"></bodystyle>
-        <i><?php echo $login_session; ?></i>
+    <body>
+        <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
         <b id="logout"><a href="logout.php">Log Out</a></b>
-        <div class="row">
-            <div class="profile">
-                <img src="bobcat.jpg" alt="profile image" class="profile__image">
-                <div class="profile__name">@member_name</div>
-                <div class="profile__detail"> 
-                    Email Address: $memberEmail<br>
-                    Graduation Year: $gradYear<br>
-                </div>
-            </div>
-            <div class="organization">
-                <img src="bobcat.jpg" alt="profile image" class="profile__image">
-                <div class="profile__org">$orgName</div>
-                <div class="profile__detail"> 
-                    Paid Dues?	$dues<br>
-                    Member Status:	$status<br>
-                </div>
+        <div class="profile">
+        <img src="txstlogo.jpg" alt="profile image" class="profile__image">
+            <div class="profile__name">member_name</div>
+            <div class="profile__org">org_name</div>
+            <div class="profile__detail"> 
+                Email Address: <br>
+                Paid Dues? 	<br>
+                Member Status:	<br>
+                Graduation Year: <br>
             </div>
         </div>
     </body>
