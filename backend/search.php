@@ -4,15 +4,36 @@
 	if(isset($_POST['search'])){//if search button pushed
 		include ("configSoftEng.php");//connect to db
 		$search = $_POST['searchWdPHP'];// $conn->real_escape_string($_POST['searchWdPHP']);//set $search var equal to input
-		$data = $conn->query("SELECT id FROM Organization WHERE name LIKE '$search'");//query database to check if the search input exists
+		$data = $conn->query("SELECT id FROM Organization WHERE name='$search'");//query database to check if the search input exists
 		if($data->num_rows > 0){ // if there is a match in the search bar
 			$_SESSION['name'] = $search;
 			$searchRes = mysqli_fetch_assoc($data);//fetch the data from the query
 			$_SESSION['id'] = (int) $searchRes['id'];//get the id of the logged in user and assign it to a session variable. Convert back to an int
 			exit ('Search success');
-		} else {
+		} else { 
+            include ("configSoftEng.php");//connect to db
+            $result = mysqli_query($conn, "SELECT * FROM `Organization`");
+            ?>
+                <table class="srchRes" style="margin-top:4%">
+                    <tr>
+                        <th style="text-align:center;">Club Name</th>
+                        <th style="text-align:center;">Category</th>
+                    </tr>
+                </table>
+            <?php
+
+            while($row = mysqli_fetch_array($result)){
+                ?>
+                <table class="srchRes">
+                    <tr>
+                        <td><?php echo $row['name'];?></td>
+                        <td><?php echo $row['category'];?></td>
+                    </tr>
+                </table>
+                <?php
+            }
 			$search = null;
-			exit('Not found');
+			exit('');
 		}
 
 		exit($search . " = " . "" );
@@ -32,19 +53,6 @@
         </script>
         <style>
        
-        /* Header/Logo Title */
-        .header {
-          padding-top: 40px;
-          background: #6A5638;
-          color: white;
-        }
-        .header2 {
-          padding-top: 67px;
-          background: #501214;
-          color: white;
-          padding-bottom: 16px;
-        }
-
         body{
             font-size:25px;
             font-family: Arial;
@@ -77,19 +85,10 @@
             cursor: pointer;
         }
 
-        .sidebar{
-            float:right;
-            padding-right:75px;
-            padding-top:50px;
-        }
-        .sidebar button{
-            font-size:22px;
-            border:none;
-            margin:20px;            
-        }
-
         .srchRes{
             margin-left:10%;
+            text-align:center;
+            font-size:25px;
         }
 
         .clubBtn{
@@ -106,21 +105,7 @@
     <body>
 
 
-        <div class="header"></div> 
-        <div class="header2"></div>
-
-
-    	
-
-        <div class="sidebar">
-            <button onclick="window.open('https://www.google.com', '_blank');">Home</button><br><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">Calendar</button><br><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">Events</button><br><hr>
-            <button  id="list" name="list">List</button><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">Gallery</button><br><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">Instructions</button><br><hr>
-            <button onclick="window.open('https://www.google.com', '_blank');">Settings</button><br><hr>
-        </div>
+        <?php include("header.php")?> 
 
         <div class="content">
 			<input class="searchBar" type="text" id="input" placeholder="Search...">
@@ -138,33 +123,27 @@ $(document).ready(function() {
 	//execute this code after the document has loaded
 	$("#search").on('click', function(){//search button pushed
 		
-		var searchWd = $("#input").val();//set searchWd equal to user input
-
-		if(searchWd == ""){//user entered nothing
-			alert("Please check your inputs.");	
-		} else { //send if search bar has info
-			$.ajax({
-				url: 'index.php',
-				method: 'POST',
-				data:{
-					search: 1,
-					searchWdPHP: searchWd,
-				},
-				success: function(response){
-					$("#response").html(response);
-					if(response.indexOf('success') >= 0){
-						window.location = 'club.php';
-					}
-
-					if(response.indexOf('Not') >= 0){
-						
-					}
-				},
-			});
-		}
+		var searchWd = $("#input").val();//set searchWd equal to user input	
+		$.ajax({
+			url: 'search.php',
+			method: 'POST',
+			data:{
+				search: 1,
+				searchWdPHP: searchWd,
+			},
+			success: function(response){
+				$("#response").html(response);
+				if(response.indexOf('success') >= 0){
+					window.location = 'club.php';
+				}
+			},
+		});
+		
 	});
 });
 </script>
 
+<?php
+    
 
-
+?> 
