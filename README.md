@@ -75,7 +75,8 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 * Chance - Add images and biography info to DB, reformat club page code, incorporate better presentation of future events to club page, possibly add calendar to club page. 
 
 ## **3rd Sprint Task Summary**
-Testing with use cases and debugging.
+**Login Functionalities with Corresponding User Profile Page enhancement**
+* (Bailey Cheung) - PR 53 (Refactor Profile Page): Enhance Profile Page HTML layout and CSS to be more user friendly; PR 54 (Tag Algorithm) and PR 55 (Driver.java and TagArray.java): Refactor algorithm to be object oriented and to create unique tags at runtime based on what the user defines, is not connected with data base (logic is in java)
 
 ## **Team Mascot**
 ![alt text](https://github.com/CS3398-Borg-Engineerz/CS-Borg-Engineerz-S2020/blob/master/Borg.jpg)
