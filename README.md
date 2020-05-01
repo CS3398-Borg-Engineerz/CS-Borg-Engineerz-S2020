@@ -77,6 +77,7 @@ As a team we are researching our DB, UI, UX design and are implementing the desi
 ## **3rd Sprint Task Summary**
 **Login Functionalities with Corresponding User Profile Page enhancement**
 * (Bailey Cheung) - PR 53 (Refactor Profile Page): Enhance Profile Page HTML layout and CSS to be more user friendly; PR 54 (Tag Algorithm) and PR 55 (Driver.java and TagArray.java): Refactor algorithm to be object oriented and to create unique tags at runtime based on what the user defines, is not connected with data base (logic is in java)
+* (Chance Martin) - (Add images to Database and Club Page): Figured out how to hold images with the database; (addImagesQueries.sql) Updated club page to pull all fields from the database. (clubstyle.css, clubtemplate.php)
 
 ## **Team Mascot**
 ![alt text](https://github.com/CS3398-Borg-Engineerz/CS-Borg-Engineerz-S2020/blob/master/Borg.jpg)
